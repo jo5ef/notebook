@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<title>notebook</title>
+		<link rel="stylesheet" type="text/css" href="/static/style.css">
+	</head>
+	<body>
+		<h1><a href="/">notebook</a></h1>
+		<div class="user">
+			logged in as {{ user.email }}
+		</div>
+		<div class="search">
+			<form action="/" method="get">
+				<input type="text" name="q"/>
+				<input type="submit" value="search"/>
+			</form>
+		</div>
+		<div id="container">
+			{% block content %}{% endblock %}
+		</div>
+	</body>
+</html>

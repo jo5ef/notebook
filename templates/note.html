@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<form class="edit-note" action="/notes/{{ note.key.id }}" method="post">
+	<div>
+		<textarea name="body">{{ note.body|escape }}</textarea>
+	</div>
+	<div>
+		<input type="text" name="tags" value="{{ note.tagsval }}"/>
+		<input type="submit" value="save"/>
+	</div>
+</form>
+{% endblock %}

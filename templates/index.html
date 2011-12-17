@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<div style="clear:both;"></div>
+<div class="note"><a href="/notes/">new note</div>
+{% for note in notes %}
+	<div class="note">
+		<a href="/notes/{{ note.key.id }}">{{ note.date }}</a>
+		{% for tag in note.tags %}
+			<span class="tag"><a href="/?q={{ tag }}">{{ tag }}</a></span>
+		{% endfor %}
+		<div class="body">{{ note.body|escape }}</div>
+	</div>
+{% endfor %}
+{% endblock %}

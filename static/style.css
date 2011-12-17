@@ -1,0 +1,62 @@
+body {
+	font-family: monospace;
+}
+
+#container {
+	width: 100%;
+}
+
+.user {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+h1 {
+	padding: 20px 20px 20px 0;
+	margin: 0;
+	float: left;
+}
+
+.search {
+	padding: 20px;
+	float: left;
+}
+
+.search input[type="text"] {
+	width: 256px;
+}
+
+form.edit-note {
+	width: 100%;
+}
+
+form.edit-note textarea {
+	width: 100%;
+	height: 80%;
+}
+
+.edit-note input[name="tags"] {
+	width: 256px;
+}
+
+.note {
+	padding: 10px;
+	border-top: 2px dotted #00F;
+}
+
+.note .body {
+	white-space: pre-wrap;
+	padding-top: 10px;
+}
+
+span.tag {
+	padding: 2px 4px;
+	border: 1px solid #3a3;
+	background-color: #cec;
+}
+
+.tag a {
+	color: 000;
+	text-decoration: none;
+}
