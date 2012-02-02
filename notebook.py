@@ -70,13 +70,16 @@ class MainPage(webapp.RequestHandler):
 		if self.request.get('q'):
 			for t in self.request.get('q').split(' '):
 				notes.filter('tags', t)
-			
+		
 		notes.order('-date')
 		
-		render_template(self, 'templates/index.html', {
-			'user': user,
-			'notes': notes.fetch(50),
-		})
+		if notes.count(2) < 2:
+			self.redirect('/notes/%d' % notes.get().key().id())
+		else:
+			render_template(self, 'templates/index.html', {
+				'user': user,
+				'notes': notes.fetch(50),
+			})
 
 application = webapp.WSGIApplication([
 	('/', MainPage),
