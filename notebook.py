@@ -68,7 +68,8 @@ class MainPage(webapp.RequestHandler):
 		notes.filter('user =', user)
 		
 		if self.request.get('q'):
-			notes.filter('tags =', self.request.get('q'))
+			for t in self.request.get('q').split(' '):
+				notes.filter('tags', t)
 			
 		notes.order('-date')
 		
