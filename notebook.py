@@ -55,7 +55,7 @@ class Notes(webapp.RequestHandler):
 			return
 		
 		note.body = self.request.get('body')
-		note.tags = self.request.get('tags').split(' ')
+		note.tags = self.request.get('tags').lower().split(' ')
 		note.put()
 		self.redirect('/')
 
